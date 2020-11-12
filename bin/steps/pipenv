@@ -66,12 +66,15 @@ if [ ! "$SKIP_PIPENV_INSTALL" ]; then
 
         # Install the dependencies.
         elif [[ ! -f Pipfile.lock ]]; then
+            echo "alex: Quimper start "
             puts-step "Installing dependencies with Pipenv $PIPENV_VERSION…"
             /app/.heroku/python/bin/pipenv install --system --skip-lock
 
-            echo "alex: Quimper"
+            echo "alex: Quimper end"
 
         else
+            echo "alex: Morlaix start"
+
             pipenv-to-pip Pipfile.lock > requirements.txt
             "$BIN_DIR/steps/pip-uninstall"
             cp requirements.txt .heroku/python/requirements-declared.txt
@@ -79,6 +82,8 @@ if [ ! "$SKIP_PIPENV_INSTALL" ]; then
 
             puts-step "Installing dependencies with Pipenv $PIPENV_VERSION…"
             /app/.heroku/python/bin/pipenv install --system --deploy 2>&1 | indent
+
+            echo "alex: Morlaix end"
         fi
     fi
 else
