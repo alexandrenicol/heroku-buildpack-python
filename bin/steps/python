@@ -185,6 +185,8 @@ fi
 #   PIP_TO_INSTALL="${PIP_WHEEL}"
 # fi
 
+PIP_TO_INSTALL="${PIP_WHEEL}"
+
 puts-step "Installing pip ${PIP_VERSION}, setuptools ${SETUPTOOLS_VERSION} and wheel ${WHEEL_VERSION}"
 
 /app/.heroku/python/bin/python "${PIP_WHEEL}/pip" install --quiet --disable-pip-version-check --no-cache \
