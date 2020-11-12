@@ -265,6 +265,8 @@ echo "alex: installing pipenv"
 # shellcheck source=bin/steps/pipenv
 source "$BIN_DIR/steps/pipenv"
 
+echo "alex: pipenv installed"
+
 # If no requirements.txt file given, assume `setup.py develop` is intended.
 # This allows for people to ship a setup.py application to Heroku
 
