@@ -57,6 +57,8 @@ if [ ! "$SKIP_PIPENV_INSTALL" ]; then
         # avoid this eager behavior.
         /app/.heroku/python/bin/pip install pipenv==$PIPENV_VERSION --upgrade --upgrade-strategy only-if-needed &> /dev/null
 
+        echo "alex: BREST"
+
         # Install the test dependencies, for CI.
         if [ "$INSTALL_TEST" ]; then
             puts-step "Installing test dependencies…"
